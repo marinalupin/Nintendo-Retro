@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expositors - Convenció</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Full d’estils propi (opcional, no toquem CSS) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- Navbar Nintendo-ish (vermella, text blanc, contorn fosc) -->
+  <nav class="navbar navbar-expand-lg bg-danger navbar-dark border-bottom border-2 border-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Nintendo Retro BCN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Desplega menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inici</a></li>
+          <li class="nav-item"><a class="nav-link" href="info.html">Info</a></li>
+          <li class="nav-item"><a class="nav-link" href="horaris.html">Horaris</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="./expositors.html">Expositors</a></li>
+          <li class="nav-item"><a class="nav-link" href="convidats.html">Convidats</a></li>
+          <li class="nav-item"><a class="nav-link" href="mapa.html">Mapa</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero de secció (plàstic retro: fons clar + contorn fosc) -->
+  <header class="container mb-4">
+    <div class="p-4 p-md-5 bg-white rounded-3 border border-2 border-dark text-center shadow-sm">
+      <h1 class="mb-3">Inscripció d'expositors</h1>
+      <p class="lead mb-3">Omple el formulari per sol·licitar espai a la fira.</p>
+    </div>
+  </header>
+
+  <!-- Contingut principal -->
+  <main class="container mb-5">
+    <form action="gracies.html" method="post" novalidate class="needs-validation">
+
+      <!-- Dades de l'empresa -->
+      <fieldset class="mb-4 border border-2 border-dark p-3 rounded-3 bg-white shadow-sm">
+        <legend class="fw-bold px-2">Dades de l'empresa <span class="badge rounded-pill text-bg-dark ms-2">Obligatori *</span></legend>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="empresa" class="form-label">Nom de l'empresa (Particulars deixar en blanc)</label>
+            <input id="empresa" name="empresa" type="text" class="form-control" minlength="2" maxlength="100">
+          </div>
+
+          <div class="col-md-6">
+            <label for="persona" class="form-label">Persona de contacte *</label>
+            <input id="persona" name="persona" type="text" class="form-control" required minlength="2" maxlength="100">
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email *</label>
+            <input id="email" name="email" type="email" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="telefon" class="form-label">Telèfon *</label>
+            <input id="telefon" name="telefon" type="tel" class="form-control" required
+                   pattern="[0-9 +()-]{6,20}" placeholder="600000000">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Activitat -->
+      <fieldset class="mb-4 border border-2 border-dark p-3 rounded-3 bg-white shadow-sm">
+        <legend class="fw-bold px-2">Activitat</legend>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="categoria" class="form-label">Categoria</label>
+            <select id="categoria" name="categoria" class="form-select">
+              <option>Videojocs</option>
+              <option>Maquinària</option>
+              <option>Merchandising</option>
+              <option>Indie / Estudi</option>
+              <option>Altres</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="tamany" class="form-label">Mida d'estand</label>
+            <select id="tamany" name="tamany" class="form-select">
+              <option>Taula (2 m)</option>
+              <option>10 m²</option>
+              <option>20 m²</option>
+              <option>40 m²</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="electricitat" id="electricitat" value="sí">
+              <label class="form-check-label" for="electricitat">Necessito presa d'electricitat</label>
+            </div>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="checkbox" name="internet" id="internet" value="sí">
+              <label class="form-check-label" for="internet">Necessito connexió a Internet</label>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="dies" class="form-label">Dies d'assistència</label>
+            <select id="dies" name="dies" multiple class="form-select">
+              <option>Divendres</option>
+              <option>Dissabte</option>
+              <option>Diumenge</option>
+            </select>
+            <div class="form-text">Mantén premuda la tecla Ctrl (o Cmd a Mac) per seleccionar diversos dies.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="notes" class="form-label">Comentaris</label>
+            <textarea id="notes" name="notes" rows="4" class="form-control"
+                      placeholder="Logística, franges horàries, etc."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- RGPD i Honeypot -->
+      <fieldset class="mb-4 border border-2 border-dark p-3 rounded-3 bg-white shadow-sm">
+        <legend class="fw-bold px-2">Privacitat</legend>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="consentiment" id="consentiment" required>
+          <label class="form-check-label" for="consentiment">
+            Accepto el tractament de dades segons l'avís de privacitat *
+          </label>
+        </div>
+
+        <!-- Honeypot ocult (sense CSS extern, només Bootstrap) -->
+        <div class="d-none">
+          <label for="weburl">No omplir aquest camp:</label>
+          <input type="text" name="weburl" id="weburl" autocomplete="off" tabindex="-1" class="form-control">
+        </div>
+      </fieldset>
+
+      <!-- Botons -->
+      <div class="d-flex flex-wrap gap-2">
+        <button type="submit" class="btn btn-danger rounded-pill shadow">Enviar sol·licitud</button>
+        <button type="reset" class="btn btn-outline-dark rounded-pill">Netejar</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer (clàssic, amb contorn) -->
+  <footer class="text-center py-4 bg-white border-top border-2 border-dark">
+    <p class="mb-0">© 2025 Nintendo Retro BCN</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
