@@ -217,7 +217,99 @@ nav ul li a:hover {
     text-align: center;
 }
 
+/* Apartat Events*/ 
 
+.dia-event {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dia-event h2 { /* Estil per al títol dels dies del events (DISSABTE - 01 de Novembre)*/
+  color: #dc3545;
+  border-bottom: 2px solid #dc3545; /* Línea inferior vermella */
+  padding-bottom: 10px; /* Espai entre text i línea */
+  margin-bottom: 20px; /* Espai inferior després del títol */
+}
+
+.carta-event { /* Cartes inviduals per cada events */
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px; 
+  margin-bottom: 15px;
+  border-left: 4px solid #dc3545;
+}
+
+.carta-event:hover { /* Efecte de quan passa el ratón per sobre */
+  transform: translateY(-5px); /* Es mou -5px cap amunt, en eix vertical */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Donar-li ombra */
+}
+
+.horari-event {
+  font-weight: bold;
+  color: #dc3545;
+  margin-bottom: 5px;
+}
+
+.titol-event {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.localitzacio-event {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.pagina-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pagina-header h1 {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Inicis */
+.compte-enrere {
+  padding: 60px 0; /* Espai superior i inferior de 60px */
+}
+
+.compte-enrere-titol {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.compte-enrere-temps { 
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.compte-enrere-item { /* Cada element individual del compte enrere */
+  background: rgba(255,255,255,0.2); /* Fons semitransparent */
+  padding: 1.5rem;
+  border-radius: 10px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.compte-enrere-item span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.compte-enrere-item small {
+  font-size: 0.9rem;
+}
 
 
 
@@ -231,3 +323,4 @@ h1, h2 {
 p {
     color: #3b3939;
 }
+
