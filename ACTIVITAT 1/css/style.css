@@ -1,13 +1,11 @@
 /* styles.css */
 
-
-
 /* Reset de marges i padding */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
+    background-color: #f5f5f5;
 }
 
 /* Estils per a la navbar */
@@ -23,7 +21,6 @@ nav ul {
     display: flex;
     justify-content: center;
 }
-
 
 nav ul li {
     margin: 0 20px;
@@ -41,200 +38,416 @@ nav ul li a:hover {
 
 /* Estils per al contenidor principal */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 100px;
 }
 
 /* Estils per a les files i columnes */
 
-
-
-
-
-
-/* Apartat Informació*/
+/* Apartat Informació */
 .JocsDestacats {
     position: relative;
-    width: 330px;
+    width: 100%;
     height: 200px;
-    margin: 0px;
-    margin-left: 30px;
+    margin: 0;
     margin-bottom: 5px;
-    overflow: hidden; /* Recorta todo lo que sobresale*/
+    overflow: hidden;
     cursor: pointer;
     border-radius: 30px;
     display: flex;
-    gap: 20px;
 }
 
 .contenedorfilas {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Determina el espacio entre las filas*/
-    margin: 0px;
-    justify-content: flex-start;
+    gap: 0;
+    margin: 0;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
 }
 
-.bloque { /* Cada uno de los bloques de imagen y texto*/
-    width: 330px;
-    margin-top: -30px; /* Subir la fila secundaria mas arriba*/
+.bloque {
+    flex: 1 1 300px;
+    max-width: 330px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 0 8px;
 }
 
 .JocsDestacats video {
     position: absolute;
-    margin-top: 0px;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.4s ease; /* Transición suave para el zoom */
+    transition: opacity 0.4s ease;
     z-index: 1;
 }
 
-
-.Titulo{
-    font-size: 24px;
-    position: relative;
-    margin-bottom: 60px;
-    margin-left: 35px;
-    font-weight: bolder;
-    margin-top: 40px;
-}
-
-.MarioBros{
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease; /* Transición suave para el zoom */
-    z-index: 2;
-}
-    
-.JocsDestacats:hover .MarioBros{
-    opacity: 0; 
-}
-
-.JocsDestacats:hover .video{
-    opacity: 1; /* Para que desaparezca la imagen */
-}
-
-.titulojocs {
-    text-align: left;
-    font-size: 12px;
-    margin: 20px;
-    bottom: 0px;
-    margin-top: 0px;
-    width: 330px;
-    padding: 0px;
-}
-
-.text{
-    font-weight: bolder;
-    font-size: 14px;
-    margin-bottom: 0px;
-    margin: 0px;
-    margin-left: 10px;
-}
-
-.titulojocs p {
-    top: 0px;
-    text-align: left;
-    font-size: 12px;
-    bottom: 10px;
-    margin: 0px;
-    margin-left: 10px;
-    width: 330px;
-}
-
-.JocsDestacats img{
-    width: 330px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 30px;
-}
-
-
-
-/* Apartat Convidats*/ 
-
-  .ImagenesCarrusel {
-    display: flex;
-    animation: mover 25s infinite linear;
-    margin-bottom: 100px;
-    margin: 20px auto;
-    /*overflow: hidden;  /* Para que no sobresalga */ 
-  }
-
-  .ImagenesCarrusel img {
-    position: relative;
-    transition: filter 0.3s;
-    display: flex;
-    filter: brightness(0.8);
-  }
-
-  .ImagenesCarrusel-item {
-    width: 500px; /* no cambiar */
-    height: 600px;
-    position: relative;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-
-.carousel-caption p {
-  color: white;
-}
-
-  .ImagenesCarrusel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajuste proporcional */
-  display: flex;
-  transition: filter 0.3s;
-  margin-right: 0;
-}
-
-  .ImagenesCarrusel-item img:hover {
-    filter: brightness(1); /* Brillo de las imagenes al pasar el cursor*/
-  }
-
-  @keyframes mover {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-.Titulo2{
+.Titulo {
     font-size: 24px;
     position: relative;
     margin-bottom: 20px;
-    margin-left: 35px;
     font-weight: bolder;
-    margin-top: 40px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.JocsDestacats img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.JocsDestacats:hover img {
+    opacity: 0; 
+}
+
+.JocsDestacats:hover video {
+    opacity: 1;
+}
+
+.Titulo {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+    margin-top: 50px;
     text-align: center;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 20px;
+    width: 100%;
+    padding: 0 15px 20px 15px;
+    box-sizing: border-box;
+}
+
+.Titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+    border-radius: 4px;
+}
+
+.text {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin: 0;
+    color: #333;
+}
+
+.titulojocs p {
+    text-align: left;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 8px;
+    width: 100%;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .contenedorfilas {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .Titulo {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .bloque {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bloque {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .contenedorfilas {
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .Titulo {
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+    }
+    
+    .titulojocs {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .bloque {
+        padding: 0 10px;
+    }
+    
+    .Titulo {
+        padding: 0 10px;
+    }
+    
+    .titulojocs {
+        padding: 0 10px;
+    }
+}
+
+/* Apartat Convidats */ 
+.carrusel-completo {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 40px 0;
+    margin: 40px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    
+    /* Ocultar scrollbar  */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+   
+  
+}
+
+.carrusel-completo::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-completo:active {
+    cursor: grabbing;
+}
+
+.carrusel-completo-track {
+    display: flex;
+    gap: 0;
+    padding: 0 20px;
+    width: max-content;
+}
+
+.carrusel-completo-item {
+    width: 350px;
+    height: 480px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    background: #fff;
+    margin: 0 10px;
+}
+
+/* Efecto de unión perfecta entre imágenes */
+.carrusel-completo-item:not(:last-child) {
+    border-right: 1px solid transparent;
+}
+
+.carrusel-completo-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+}
+
+.carrusel-completo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.carrusel-completo-item:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+    color: white;
+    padding: 25px 20px 20px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+.carousel-caption h3 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Controles e instrucciones (opcional) */
+.controles-carrusel {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 60px 0;
+    padding: 0 20px;
+}
+
+.icono {
+    font-size: 18px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.Titulo2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+    margin-top: 70px;
+    text-align: center;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 20px;
+    width: 100%;
+    padding: 0 15px 20px 15px;
+    box-sizing: border-box;
+}
+
+.Titulo2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+    border-radius: 4px;
+}
+
+/* Responsive para carrusel */
+@media (max-width: 1024px) {
+    .carrusel-completo-item {
+        width: 320px;
+        height: 430px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 20px;
+    }
+    
+    .carousel-caption p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrusel-completo-item {
+        width: 280px;
+        height: 380px;
+    }
+    
+    .carrusel-completo-track {
+        padding: 0 15px;
+    }
+    
+    .Titulo2 {
+        font-size: 28px;
+        margin-top: 50px;
+        padding: 0 15px 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrusel-completo-item {
+        width: 260px;
+        height: 350px;
+    }
+    
+    .carrusel-completo-track {
+        padding: 0 10px;
+    }
+    
+    .Titulo2 {
+        font-size: 24px;
+        margin-top: 40px;
+        padding: 0 10px 20px 10px;
+    }
+    
+    .carousel-caption {
+        padding: 20px 15px 15px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 18px;
+    }
+    
+    .carousel-caption p {
+        font-size: 12px;
+    }
 }
 
 /* Apartat Events*/ 
-
 .dia-event {
   background-color: #f8f9fa;
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 0 15px 30px 15px;
 }
 
-.dia-event h2 { /* Estil per al títol dels dies del events (DISSABTE - 01 de Novembre)*/
+.dia-event h2 {
   color: #dc3545;
-  border-bottom: 2px solid #dc3545; /* Línea inferior vermella */
-  padding-bottom: 10px; /* Espai entre text i línea */
-  margin-bottom: 20px; /* Espai inferior després del títol */
+  border-bottom: 2px solid #dc3545;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.carta-event { /* Cartes inviduals per cada events */
+.carta-event {
   background-color: white;
   border-radius: 8px;
   padding: 20px; 
@@ -242,9 +455,9 @@ nav ul li a:hover {
   border-left: 4px solid #dc3545;
 }
 
-.carta-event:hover { /* Efecte de quan passa el ratón per sobre */
-  transform: translateY(-5px); /* Es mou -5px cap amunt, en eix vertical */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Donar-li ombra */
+.carta-event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .horari-event {
@@ -267,6 +480,7 @@ nav ul li a:hover {
 .pagina-header {
   text-align: center;
   margin-bottom: 40px;
+  padding: 0 15px;
 }
 
 .pagina-header h1 {
@@ -276,7 +490,7 @@ nav ul li a:hover {
 
 /* Inicis */
 .compte-enrere {
-  padding: 60px 0; /* Espai superior i inferior de 60px */
+  padding: 60px 15px;
 }
 
 .compte-enrere-titol {
@@ -293,8 +507,8 @@ nav ul li a:hover {
   flex-wrap: wrap;
 }
 
-.compte-enrere-item { /* Cada element individual del compte enrere */
-  background: rgba(255,255,255,0.2); /* Fons semitransparent */
+.compte-enrere-item {
+  background: rgba(255,255,255,0.2);
   padding: 1.5rem;
   border-radius: 10px;
   min-width: 100px;
@@ -311,10 +525,6 @@ nav ul li a:hover {
   font-size: 0.9rem;
 }
 
-
-
-
-
 /* Estils per a títols i paràgrafs */
 h1, h2 {
     color: #333;
@@ -323,4 +533,5 @@ h1, h2 {
 p {
     color: #3b3939;
 }
+
 
