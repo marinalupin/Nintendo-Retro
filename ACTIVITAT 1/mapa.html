@@ -34,8 +34,81 @@
 
   <!-- Contingut específic -->
   <main class="container my-5">
-    <!-- aquí cada persona posa el seu contingut -->
+    <section id="mapa" class="py-4">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <!-- Títol + descripció -->
+      <div class="col-12">
+        <h1 class="h2 mb-1">Mapa de la Convenció</h1>
+        <p class="text-muted mb-0">Fes clic per ampliar o descarregar el mapa.</p>
+      </div>
+
+      <!-- Imatge del mapa (responsive) -->
+      <div class="col-12 col-lg-8">
+        <figure class="figure d-block">
+          <img
+            src="imatge/mapa_1.png"
+            class="figure-img img-fluid rounded border"
+            alt="Mapa general de la convenció amb zones principals"
+            loading="lazy"
+            data-bs-toggle="modal" data-bs-target="#modalMapa"
+            style="cursor: pointer;"
+          >
+          <figcaption class="figure-caption">Clic a la imatge per veure-la a pantalla completa.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Accions i info pràctica -->
+      <div class="col-12 col-lg-4">
+        <div class="card border-2">
+          <div class="card-body">
+            <h2 class="h5">Informació ràpida</h2>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item px-0">Escenari: lateral esquerre</li>
+              <li class="list-group-item px-0">Zona Expositors: pavelló central</li>
+              <li class="list-group-item px-0">Bar / Chillout: part inferior</li>
+              <li class="list-group-item px-0">WC i Info: banda inferior esquerra</li>
+              <li class="list-group-item px-0">Accés: Entrada central inferior</li>
+            </ul>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalMapa">
+                Veure a pantalla completa
+              </button>
+              <a class="btn btn-outline-dark" href="imatge/mapa_1.png" download>
+                Descarrega el mapa (PNG)
+              </a>
+              <!-- Posa el teu enllaç real si tens ubicació -->
+              <a class="btn btn-light border" href="#" target="_blank" rel="noopener">
+                Obrir ubicació a Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
   </main>
+
+  <!-- Modal Bootstrap (no cal JS extra) -->
+<div class="modal fade" id="modalMapa" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content border-2">
+      <div class="modal-header">
+        <h3 class="modal-title h5 mb-0">Mapa — Vista ampliada</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Imatge fluida perquè s’adapti a l’amplada del modal -->
+        <img src="imatge/mapa_1.png" class="img-fluid d-block mx-auto rounded border" alt="Mapa ampliat de la convenció">
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <!-- Peu de pàgina comú -->
   <footer class="text-center py-4 bg-white border-top border-2 border-dark">
