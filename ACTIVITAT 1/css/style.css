@@ -179,29 +179,35 @@ nav {
 
 
 .carousel-caption {
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     padding: 15px 10px 10px;
     bottom: 0;
     left: 0;
     right: 0;
+    bottom: 60px !important; /* Más arriba */
+    text-shadow: 0 0 5px #000000,
+        0 0 10px #000000,
+        0 0 15px #f3f3f3;
 }
 
 .carousel-caption h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.891);
+    
 }
 
 .carousel-caption p {
     font-size: 1rem;
     margin: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.862);
+    
 }
 
 .carousel-caption strong {
-    color: #fff;
+    color: #ffffff;
     font-weight: 600;
+    
 }
 
 /* Controls de navegació del carrusel */
@@ -565,6 +571,3 @@ p {
         font-size: 0.75rem;
     }
 }
-
-
-
