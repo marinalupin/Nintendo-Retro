@@ -1,52 +1,58 @@
-/* styles.css */
-
 /* Reset de marges i padding */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+
+}
+
+body::before {  /*Capa semitrasparent sobre el fons de la pàgina */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.604); /* La capa blanca semitransparent */
+    z-index: -1;
 }
 
 /* Estils per a la navbar */
 nav {
     background-color: #48494a;
-    padding: 15px;
+    padding: 20px;
+    padding: 1.1rem 0 !important; /* !important es per sobreescriure altres elements per forçar */
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
+/* Inicis */
+.countdown-number {     /* Per als números del compte enrere */
+    font-size: 2.5rem;
     font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
 }
 
-nav ul li a:hover {
-    color: #007bff;
+.countdown-text {       /* Per als textos del compte enrere */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-/* Estils per al contenidor principal */
-.container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0 100px;
+.countdown-card {       /* La targeta compte enrere */
+
+    padding: 60px 15px;
+    background-image: url('../imatge/ladrillos.jpg');
+    border: 3px solid #584749;
 }
 
-/* Estils per a les files i columnes */
 
-/* Apartat Informació */
-.JocsDestacats {
+/* Apartat informació */
+.JocsDestacats {        /* Per als jocs destacats amb efecte hover */
     position: relative;
     width: 100%;
     height: 200px;
@@ -56,24 +62,6 @@ nav ul li a:hover {
     cursor: pointer;
     border-radius: 30px;
     display: flex;
-}
-
-.contenedorfilas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    margin: 0;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0;
-}
-
-.bloque {
-    flex: 1 1 300px;
-    max-width: 330px;
-    margin-top: 0;
-    margin-bottom: 30px;
-    padding: 0 8px;
 }
 
 .JocsDestacats video {
@@ -97,9 +85,12 @@ nav ul li a:hover {
     width: 100%;
     padding: 0 15px;
     box-sizing: border-box;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
 }
 
-.JocsDestacats img {
+.JocsDestacats img {        /* Efecte hover per amaga la imatge i mostra el vídeo */
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -108,15 +99,8 @@ nav ul li a:hover {
     z-index: 2;
 }
 
-.JocsDestacats:hover img {
-    opacity: 0; 
-}
 
-.JocsDestacats:hover video {
-    opacity: 1;
-}
-
-.Titulo {
+.Titulo {       /* Estils per als títols indicats */
     font-size: 32px;
     margin-bottom: 40px;
     font-weight: bolder;
@@ -128,9 +112,12 @@ nav ul li a:hover {
     width: 100%;
     padding: 0 15px 20px 15px;
     box-sizing: border-box;
+    text-shadow:  0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
 }
 
-.Titulo::after {
+.Titulo::after {        /* Línia de decoració a sota dels títols */
     content: '';
     position: absolute;
     bottom: 0;
@@ -142,177 +129,73 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
-.text {
-    font-weight: bolder;
-    font-size: 14px;
-    margin-bottom: 8px;
-    margin: 0;
-    color: #333;
-}
 
-.titulojocs p {
+
+.titulojocs p {     /* Descripcions dels jocs */
     text-align: left;
     font-size: 12px;
     margin: 0;
     margin-top: 8px;
     width: 100%;
-    color: #666;
+    color: #000000;
     line-height: 1.4;
 }
 
-/* Media queries para responsividad */
-@media (max-width: 1200px) {
-    .contenedorfilas {
-        width: 100%;
-        padding: 0 10px;
-    }
-    
-    .Titulo {
-        width: 100%;
-        padding: 0 15px;
-    }
-    
-    .bloque {
-        padding: 0 10px;
-    }
-}
 
-@media (max-width: 768px) {
-    .bloque {
-        flex: 1 1 100%;
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    .contenedorfilas {
-        width: 100%;
-        padding: 0;
-        justify-content: center;
-    }
-    
-    .Titulo {
-        width: 100%;
-        padding: 0 15px;
-        text-align: center;
-    }
-    
-    .titulojocs {
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-    }
-    
-    .bloque {
-        padding: 0 10px;
-    }
-    
-    .Titulo {
-        padding: 0 10px;
-    }
-    
-    .titulojocs {
-        padding: 0 10px;
-    }
-}
-
-/* Apartat Convidats */ 
-.carrusel-completo {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 40px 0;
-    margin: 40px 0;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
-    
-    /* Ocultar scrollbar  */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    
-   
-  
-}
-
-.carrusel-completo::-webkit-scrollbar {
-    display: none;
-}
-
-.carrusel-completo:active {
-    cursor: grabbing;
-}
-
-.carrusel-completo-track {
+/* Apartat Convidats */
+#convidats {
     display: flex;
-    gap: 0;
-    padding: 0 20px;
-    width: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
 
-.carrusel-completo-item {
-    width: 350px;
-    height: 480px;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
-    background: #fff;
-    margin: 0 10px;
+#carouselConvidats {        /* Carrusel de convidats */
+    width: 35%;
+    height: 600px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
-/* Efecto de unión perfecta entre imágenes */
-.carrusel-completo-item:not(:last-child) {
-    border-right: 1px solid transparent;
+
+.carousel-inner {
+    height: 100%;
+    width: 100%;
 }
 
-.carrusel-completo-item:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-    z-index: 20;
+#carouselConvidats .carousel-item {     /* Elements individuals del carrusel */
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
 }
 
-.carrusel-completo-item img {
+#carouselConvidats .carousel-item img {     /* Imatges del carrusel */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+    object-position: center center;
 }
 
-.carrusel-completo-item:hover img {
-    transform: scale(1.05);
-}
 
 .carousel-caption {
-    position: absolute;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 15px 10px 10px;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
-    color: white;
-    padding: 25px 20px 20px;
-    text-align: center;
-    backdrop-filter: blur(2px);
 }
 
 .carousel-caption h3 {
-    margin: 0 0 10px 0;
-    font-size: 22px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
     font-weight: bold;
-    color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-caption p {
+    font-size: 1rem;
     margin: 0;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #f0f0f0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -321,217 +204,367 @@ nav ul li a:hover {
     font-weight: 600;
 }
 
-/* Controles e instrucciones (opcional) */
-.controles-carrusel {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0 60px 0;
-    padding: 0 20px;
+/* Controls de navegació del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.icono {
-    font-size: 18px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+/* Efecte hover als controls */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 0.9;
 }
 
-.Titulo2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-weight: bolder;
-    margin-top: 70px;
-    text-align: center;
-    color: #2c3e50;
-    position: relative;
-    padding-bottom: 20px;
-    width: 100%;
-    padding: 0 15px 20px 15px;
-    box-sizing: border-box;
-}
-
-.Titulo2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
+/* Indicadors del carrusel */
+.carousel-indicators button {
+    width: 40px;
     height: 4px;
-    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
-    border-radius: 4px;
+    opacity: 0.4;
+    transition: opacity 0.6s ease;
 }
 
-/* Responsive para carrusel */
-@media (max-width: 1024px) {
-    .carrusel-completo-item {
-        width: 320px;
-        height: 430px;
-    }
-    
-    .carousel-caption h3 {
-        font-size: 20px;
-    }
-    
-    .carousel-caption p {
-        font-size: 13px;
-    }
+.carousel-indicators button.active {
+    opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .carrusel-completo-item {
-        width: 280px;
-        height: 380px;
-    }
-    
-    .carrusel-completo-track {
-        padding: 0 15px;
-    }
-    
-    .Titulo2 {
-        font-size: 28px;
-        margin-top: 50px;
-        padding: 0 15px 20px 15px;
-    }
+
+
+/* Estilos generales */
+.container {
+    max-width: 1200px;
 }
 
-@media (max-width: 480px) {
-    .carrusel-completo-item {
-        width: 260px;
-        height: 350px;
-    }
-    
-    .carrusel-completo-track {
-        padding: 0 10px;
-    }
-    
-    .Titulo2 {
-        font-size: 24px;
-        margin-top: 40px;
-        padding: 0 10px 20px 10px;
-    }
-    
-    .carousel-caption {
-        padding: 20px 15px 15px;
-    }
-    
-    .carousel-caption h3 {
-        font-size: 18px;
-    }
-    
-    .carousel-caption p {
-        font-size: 12px;
-    }
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Apartat Events*/ 
+
+/* Horaris i events */
 .dia-event {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin: 0 15px 30px 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+   
 }
 
-.dia-event h2 {
-  color: #dc3545;
-  border-bottom: 2px solid #dc3545;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+.dia-event h2 {     /* Títols dels dies */
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
+    font-size: 1.5rem;
 }
 
-.carta-event {
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px; 
-  margin-bottom: 15px;
-  border-left: 4px solid #dc3545;
+.carta-event {      /* Targetes individuals de cada events */
+    border: 12px solid transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border-image: url('../imatge/ladrillos.jpg') 30 round;
+    transition: all 0.3s ease;
 }
 
-.carta-event:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+.carta-event:hover {        /* Efecte hover a les targetes */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.horari-event {
-  font-weight: bold;
-  color: #dc3545;
-  margin-bottom: 5px;
+.horari-event {     /* Horaris del events */
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
+    font-size: 1rem;
 }
 
 .titol-event {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.localitzacio-event {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
-.pagina-header {
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 0 15px;
-}
-
-.pagina-header h1 {
-  color: #dc3545;
-  font-weight: bold;
-}
-
-/* Inicis */
-.compte-enrere {
-  padding: 60px 15px;
-}
-
-.compte-enrere-titol {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.compte-enrere-temps { 
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.compte-enrere-item {
-  background: rgba(255,255,255,0.2);
-  padding: 1.5rem;
-  border-radius: 10px;
-  min-width: 100px;
-  text-align: center;
-}
-
-.compte-enrere-item span {
-  font-size: 2.5rem;
-  font-weight: bold;
-  display: block;
-}
-
-.compte-enrere-item small {
-  font-size: 0.9rem;
-}
-
-/* Estils per a títols i paràgrafs */
-h1, h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
     color: #333;
 }
 
-p {
-    color: #3b3939;
+.descripcio-event {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.4;
 }
+
+.localitzacio-event {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+
+
+/* Estil per als paràgrafs */
+
+p {
+    color: #000000;
+
+}
+
+.guia {
+    color: #000000;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 15px #dcdcdc,
+        0 0 10px #f3f3f3;
+    text-align: center;
+}
+
+.jocs {
+    color: #000000;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 15px #dcdcdc,
+        0 0 10px #f3f3f3;
+}
+
+#info .Titulo { /* Espai per a JOCS DESTACATS*/
+    margin-bottom: 60px !important;
+}
+
+
+
+/* Formulari */
+#expositors .bg-white {     /* Efecte de vidre */
+    background-color: rgba(255, 255, 255, 0.100) !important;
+    backdrop-filter: blur(5px);
+}
+
+#expositors .border-dark {      /* Vores suaus */
+    border-color: rgba(0, 0, 0, 0.3) !important;
+    /* Borde más suave */
+}
+
+#expositors .shadow-sm {        /* Ombra suau */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    /* Sombra más suave */
+}
+
+#expositors header .bg-white {      /* Capçalera del formulari amb efecte de vidre */
+    background-color: rgba(255, 255, 255, 0.100) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#expositors fieldset .bg-white {           /* Camps del formulari */
+    background-color: rgba(255, 255, 255, 0.638) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* El peu de la pàgina */
+.footer-custom {
+    background-color: #dc3545;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.footer-content {       /* Continguts del footer */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 0px;
+}
+
+.footer-content a {     /* Enllaços del footer */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {       /* Efecte hover als enllaços */
+    color: #ffd700;
+}
+
+.footer-bottom {        /* Part inferior del footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.span-text {        /* Text del span a les xarxes socials */
+    margin-left: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+
+/* Alineació dels icons de Font Awesome */
+.fas,
+.fab {
+    width: 16px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {    /* Pantalles grans (fins a 1400px) */
+    #carouselConvidats {
+        width: 45%;
+        height: 550px;
+    }
+}
+
+@media (max-width: 1200px) {    /* Pantalles mitjanes (fins a 1200px) */
+    #carouselConvidats {
+        width: 55%;
+        height: 500px;
+    }
+}
+
+@media (max-width: 1024px) {    /* Tablets (fins a 1024px) */
+    #carouselConvidats {
+        width: 65%;
+        height: 450px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {     /* Tablets petites (fins a 768px) */
+    #carouselConvidats {
+        width: 80%;
+        height: 400px;
+    }
+    
+    .carousel-caption {
+        padding: 12px 8px 8px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
+    
+    .dia-event {
+        padding: 15px;
+        margin: 0 0 20px 0;
+    }
+    
+    .dia-event h2 {
+        font-size: 1.3rem;
+    }
+    
+    .carta-event {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .titol-event {
+        font-size: 1.1rem;
+    }
+    
+    .footer-custom .d-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-custom .me-5 {
+        margin-right: 0 !important;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {     /* Mòbils (fins a 576px) */
+    #carouselConvidats {
+        width: 90%;
+        height: 350px;
+    }
+    
+    .carousel-caption {
+        padding: 10px 5px 5px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.8rem;
+    }
+    
+    .carousel-indicators button {
+        width: 30px;
+        height: 3px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 12%;
+    }
+    
+    .dia-event {
+        padding: 10px;
+    }
+    
+    .dia-event h2 {
+        font-size: 1.1rem;
+    }
+    
+    .carta-event {
+        padding: 0.6rem;
+    }
+    
+    .titol-event {
+        font-size: 1rem;
+    }
+    
+    .horari-event {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {     /* Mòbils molt petits (fins a 400px) */
+    #carouselConvidats {
+        width: 95%;
+        height: 300px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 0.85rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.75rem;
+    }
+}
+
 
 
