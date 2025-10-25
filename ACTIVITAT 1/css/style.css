@@ -19,11 +19,201 @@ body::before {  /*Capa semitrasparent sobre el fons de la pàgina */
 }
 
 /* Estils per a la navbar */
-nav {
-    background-color: #48494a;
+nav .navbar-nav .nav-item{
+    margin: 0 15px;
     padding: 20px;
     padding: 1.1rem 0 !important; /* !important es per sobreescriure altres elements per forçar */
 }
+
+nav .navbar-nav .nav-link {
+    background-color: rgba(255, 255, 255, 0.08); /* Background sutil */
+    padding: 10px 20px; /* Control del tamaño aquí */
+    border-radius: 8px; /* Esquinas redondeadas */
+    transition: all 0.3s ease;
+}
+
+/* Introducció */
+
+#inici {  
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.097) !important; /* Blanco más sólido */
+    border: 2px solid #584749;
+    border-radius: 15px;
+    margin: 130px 50px 0 50px; /* Margen simétrico */
+    padding: 3rem 0; /* Más padding para mejor aspecto */
+    backdrop-filter: blur(10px); /* Efecto glass opcional */
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1); /* Sombra suave */
+}
+
+/* Efecte de textura sutil al fons */
+#inici::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    
+}
+
+#inici .container {
+    position: relative;
+    z-index: 2;
+}
+
+main.mt-5.pt-5 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Títol principal */
+#inici h1 {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial Black', Arial, sans-serif;
+    letter-spacing: -0.5px;
+    text-shadow:  0 0 5px #000000,
+        0 0 10px #000000,
+        0 0 15px #000000;
+}
+
+/* Efecte d'animació per l'emoji del control */
+#inici h1::before {
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(-5deg); }
+    75% { transform: translateY(-3px) rotate(5deg); }
+}
+
+/* Text d'introducció */
+#inici .lead {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    text-shadow:  0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
+}
+
+#inici p:not(.lead) {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
+    text-shadow:  0 0 5px #ffffff,
+        0 0 10px #dcdcdc,
+        0 0 15px #f3f3f3;
+}
+
+/* Badges d'informació */
+#inici .badge {
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+#inici .badge:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Efecte de flotació suau */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+#inici .badge {
+    animation: float 4s ease-in-out infinite;
+}
+
+#inici .badge:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+#inici .badge:nth-child(3) {
+    animation-delay: 2.6s;
+}
+
+
+
+@media (max-width: 768px) {
+    #hero {
+        padding: 3rem 0 !important;
+        margin-top: 70px;
+    }
+    
+    #hero h1 {
+        font-size: 2.3rem !important;
+    }
+    
+    #hero .lead {
+        font-size: 1.1rem !important;
+    }
+    
+    #hero p:not(.lead) {
+        font-size: 1rem !important;
+    }
+    
+    #hero .badge {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.8rem;
+    }
+    
+    .d-flex.justify-content-center.gap-3.flex-wrap {
+        gap: 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero {
+        padding: 2.5rem 0 !important;
+    }
+    
+    #hero h1 {
+        font-size: 2rem !important;
+    }
+    
+    #hero .lead {
+        font-size: 1rem !important;
+    }
+    
+    #hero p:not(.lead) {
+        font-size: 0.95rem !important;
+    }
+    
+    #hero .badge {
+        font-size: 0.85rem !important;
+        padding: 0.8rem !important;
+    }
+    
+    .d-flex.justify-content-center.gap-3.flex-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 400px) {
+    #hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    #hero .lead {
+        font-size: 0.95rem !important;
+    }
+}
+
+
+
 
 /* Inicis */
 .countdown-number {     /* Per als números del compte enrere */
@@ -375,17 +565,38 @@ p {
 
 /* El peu de la pàgina */
 .footer-custom {
-    background-color: #dc3545;
-    color: #ffffff;
+    background-image: url('../imatge/fondo_6.jpg') !important;
+    position: relative;
+    overflow: hidden;
+    margin-top: 76px;
+    background-size: cover;
+    background-position: center 80%;
+    color: #000000; /* Text negre para contrastar amb el fon blanc*/
     width: 100%;
     box-sizing: border-box;
-    position: relative;
     bottom: 0;
     left: 0;
     z-index: 99;
 }
 
-.footer-content {       /* Continguts del footer */
+/* Capa blanca semi-transparent */
+.footer-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.537); /* Blanc més sólid */
+    z-index: 1;
+}
+
+.footer-custom > * {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -394,31 +605,80 @@ p {
     gap: 0px;
 }
 
-.footer-content a {     /* Enllaços del footer */
-    color: #ffffff;
+.footer-content a {
+    color: #000000; /* Text negre */
+    font-weight: bold !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-content a:hover {
+    color: #ffffff; 
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.2); /* Vora fosca per a contrast */
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.footer-custom,
+.footer-custom * {
+    color: #000000 !important;
+}
+
+.footer-custom a {
+    color: #000000 !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-content a:hover {       /* Efecte hover als enllaços */
-    color: #ffd700;
+.footer-custom a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
 }
 
-.footer-bottom {        /* Part inferior del footer */
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    margin-top: 0;
-    padding-top: 20px;
-    font-size: 0.9rem;
+.footer-custom hr {
+    background-color: #000000 !important;
+    opacity: 0.6;
 }
 
-.span-text {        /* Text del span a les xarxes socials */
+.footer-custom h6 {
+    color: #ffffff !important; /* Títols Nintendo, enllaç etc */
+    text-shadow: 0 0 5px #000000,
+        0 0 15px #000000,
+        0 0 10px #000000;
+    font-weight: 700;
+}
+
+.footer-enlace-borde {
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 15px #ffffff,
+        0 0 10px #ffffff;
+}
+
+.footer-custom .fas,
+.footer-custom .fab {
+    color: #000000 !important;
+}
+
+
+.span-text {
     margin-left: 1rem;
     font-weight: 600;
     font-size: 1.1rem;
+    color: #000000;
 }
 
-
-/* Alineació dels icons de Font Awesome */
 .fas,
 .fab {
     width: 16px;
