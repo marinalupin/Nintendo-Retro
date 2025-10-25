@@ -289,6 +289,15 @@ main.mt-5.pt-5 {
     z-index: 2;
 }
 
+.JocsDestacats:hover video {
+    opacity: 1;
+    z-index: 3;
+}
+
+.JocsDestacats:hover img {
+    opacity: 0;
+}
+
 
 .Titulo {       /* Estils per als títols indicats */
     font-size: 32px;
@@ -831,3 +840,4 @@ p {
         font-size: 0.75rem;
     }
 }
+
