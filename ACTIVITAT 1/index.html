@@ -29,17 +29,46 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inici">Inici</a></li>
-          <li class="nav-item"><a class="nav-link" href="#info">Info</a></li>
-          <li class="nav-item"><a class="nav-link" href="#convidats">Convidats</a></li>
-          <li class="nav-item"><a class="nav-link" href="#horarisEvents">Horaris i Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#mapa">Mapa</a></li>
-          <li class="nav-item"><a class="nav-link" href="#expositors">Expositors</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#inici">Inici</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#info">Info</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#convidats">Convidats</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#horarisEvents">Horaris i Events</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#mapa">Mapa</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#expositors">Expositors</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+
+  <!-- PRESENTACIÓ DE LA PÀGINA -->
+  <section id="inici" class="bg-danger text-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-4 fw-bold mb-4">🎮 Nintendo Retro BCN 2025</h1>
+          <p class="lead mb-4">
+            Benvinguts al festival més esperat pels amants de Nintendo a Barcelona!
+            Durant dos dies, submergirem en un viatge nostàlgic a través de les
+            consoles i jocs que van marcar la nostra infància, mentre celebrem
+            la innovació que continua captivant noves generacions.
+          </p>
+          <p class="mb-4">
+            Descobreix jocs clàssics, coneix als creadors llegendaris, participa
+            en tornejos emocionants i retroba la màgia dels videojocs que van
+            definir una era.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <span class="badge bg-warning text-dark p-2">🎯 8 Jocs Destacats</span>
+            <span class="badge bg-warning text-dark p-2">🌟 6 Convidats Especials</span>
+            <span class="badge bg-warning text-dark p-2">📅 2 Dies d'Esdeveniments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
 
   <!-- INICI -->
   <main class="mt-5 pt-5">
@@ -72,14 +101,12 @@
     </div>
 
     <script>
-      // Función para actualizar la cuenta atrás
+      
       function updateCountdown() {
-        // Fecha objetivo: 1 de Noviembre 2025, 10:00:00 (hora de inicio del evento)
         const targetDate = new Date('November 1, 2025 10:00:00').getTime();
         const now = new Date().getTime();
         const timeLeft = targetDate - now;
 
-        // Si el tiempo se acabó
         if (timeLeft < 0) {
           clearInterval(countdownTimer);
           document.querySelector('.countdown-card').innerHTML = `
@@ -91,7 +118,7 @@
           return;
         }
 
-        // Calcular días, horas, minutos y segundos
+        // Calcular dies, hores, minuts i segons
         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
@@ -104,7 +131,7 @@
         document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
       }
 
-      // Iniciar la cuenta atrás inmediatamente y actualizar cada segundo
+      // Iniciar el compte enrere immediatament i actualitzar cada segon
       updateCountdown();
       const countdownTimer = setInterval(updateCountdown, 1000);
     </script>
@@ -112,7 +139,6 @@
   <p class="guia">Descobreix totes les activitas programades per al Nintendo Retro BCN 2025 en l'apartat de
     Horaris
     i events.</p>
-
 
 
 
@@ -679,7 +705,7 @@
         <a href="" class="text-white me-4">
           <i class="bi bi-discord"></i>
         </a>
-        
+
       </div>
       <!-- Dreta -->
     </section>
@@ -707,16 +733,16 @@
             <h6 class="text-uppercase fw-bold">Enllaços ràpids</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffffff; height: 2px" />
             <p>
-              <a href="#convidats" class="text-white">Convidats</a>
+              <a href="#convidats" class="text-white footer-enlace-borde">Convidats</a>
             </p>
             <p>
-              <a href="#horarisEvents" class="text-white">Horaris</a>
+              <a href="#horarisEvents" class="text-white footer-enlace-borde">Horaris</a>
             </p>
             <p>
-              <a href="#expositors" class="text-white">Expositors</a>
+              <a href="#expositors" class="text-white footer-enlace-borde">Expositors</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Com arribar</a>
+              <a href="#!" class="text-white footer-enlace-borde">Com arribar</a>
             </p>
           </div>
 
@@ -746,7 +772,7 @@
         </div>
       </div>
     </section>
-    <!-- Section: Links  -->
+ 
 
     <!-- Copyright -->
     <div class="text-center p-3 footer-bottom" style="background-color: rgba(0, 0, 0, 0.2)">
@@ -759,4 +785,5 @@
 </body>
 
 </html>
+
 
